@@ -20,7 +20,7 @@ CREATE TABLE users (
 -- ==============================
 CREATE TABLE devices (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  serial_number TEXT NOT NULL,
+  serial_number TEXT NOT NULL UNIQUE
   model TEXT NOT NULL,
   order_id TEXT NOT NULL,
   install_status install_status NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE devices (
 -- ==============================
 CREATE TABLE tickets (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  number SERIAL NOT NULL,
+  number SERIAL NOT NULL UNIQUE,
   title TEXT NOT NULL,
   description TEXT,
   status ticket_status NOT NULL DEFAULT 'new',
