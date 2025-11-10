@@ -27,7 +27,7 @@ VALUES
 -- ==============================
 -- TICKETS
 -- ==============================
-INSERT INTO tickets (id, number, title, description, status, caller_id, assigned_to, estimated_resolution_date)
+INSERT INTO tickets (id, number, title, description, status, caller_id, operator_id, estimated_resolution_date)
 VALUES
   ('99999999-9999-9999-9999-999999999999', 1001, 'Laptop not booting', 'User reports that laptop does not boot properly.', 'in_progress', '11111111-1111-1111-1111-111111111111', '22222222-2222-2222-2222-222222222222', NOW() + INTERVAL '3 days'),
   ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 1002, 'Monitor flickering', 'Screen flickers randomly.', 'new', '22222222-2222-2222-2222-222222222222', NULL, NOW() + INTERVAL '5 days'),
