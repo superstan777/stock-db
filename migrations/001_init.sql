@@ -35,10 +35,10 @@ CREATE TABLE tickets (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   number SERIAL NOT NULL UNIQUE,
   title TEXT NOT NULL,
-  description TEXT,
+  description TEXT NOT NULL,
   status ticket_status NOT NULL DEFAULT 'new',
   caller_id UUID REFERENCES users(id) ON DELETE SET NULL,
-  assigned_to UUID REFERENCES users(id) ON DELETE SET NULL,
+  operator_id UUID REFERENCES users(id) ON DELETE SET NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
   estimated_resolution_date TIMESTAMP WITH TIME ZONE,
   resolution_date TIMESTAMP WITH TIME ZONE
